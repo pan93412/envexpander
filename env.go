@@ -65,7 +65,7 @@ func ResolveEnvVariable(env map[string]string) map[string]string {
 		Refvar map[string]struct{}
 	}
 
-	cvp := make(CachedVariablePos)
+	cvp := NewCachedVariablePos()
 	resolved := make(map[string]string, len(env))
 	dependents := make(map[string]replacerWithRefvar, len(env))
 
@@ -208,17 +208,4 @@ func ExtractAllVariables(value string) []VariablePos {
 	}
 
 	return variables
-}
-
-// CachedVariablePos is a scoped cache for ExtractAllVariables.
-type CachedVariablePos map[string][]VariablePos
-
-// ExtractAllVariables returns the cached variable positions.
-func (c CachedVariablePos) ExtractAllVariables(value string) []VariablePos {
-	if cached, ok := c[value]; ok {
-		return cached
-	}
-
-	c[value] = ExtractAllVariables(value)
-	return c[value]
 }

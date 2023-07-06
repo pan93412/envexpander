@@ -107,7 +107,7 @@ func TestVariablePos_Variable(t *testing.T) {
 }
 
 func TestExtractReferencedVariable(t *testing.T) {
-	cvp := make(envexpander.CachedVariablePos)
+	cvp := envexpander.NewCachedVariablePos()
 	testmap := map[string]map[string]struct{}{
 		"A=${B}":                 {"B": struct{}{}},
 		"A=${B}${C}":             {"B": struct{}{}, "C": struct{}{}},
@@ -131,7 +131,7 @@ func TestExtractReferencedVariable(t *testing.T) {
 }
 
 func BenchmarkExtractReferencedVariable(b *testing.B) {
-	cvp := make(envexpander.CachedVariablePos)
+	cvp := envexpander.NewCachedVariablePos()
 	b.ResetTimer()
 
 	for i := 0; i < b.N; i++ {
@@ -140,7 +140,7 @@ func BenchmarkExtractReferencedVariable(b *testing.B) {
 }
 
 func TestResolverIntegrate(t *testing.T) {
-	cvp := make(envexpander.CachedVariablePos)
+	cvp := envexpander.NewCachedVariablePos()
 	testmap := []struct {
 		Value     string
 		Variables map[string]string
@@ -195,7 +195,7 @@ func TestResolverIntegrate(t *testing.T) {
 }
 
 func BenchmarkResolverIntegrate(b *testing.B) {
-	cvp := make(envexpander.CachedVariablePos)
+	cvp := envexpander.NewCachedVariablePos()
 	strPtr := func(v string) *string {
 		return &v
 	}
