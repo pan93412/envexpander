@@ -152,6 +152,18 @@ A=${CCC}
 </tr>
 </table>
 
+## Benchmark
+
+```plain
+goos: darwin
+goarch: arm64
+pkg: github.com/pan93412/envexpander
+BenchmarkExtractReferencedVariable-8             9217406               109.7 ns/op           192 B/op          2 allocs/op
+BenchmarkResolverIntegrate-8                    10729408               110.4 ns/op            56 B/op          3 allocs/op
+BenchmarkResolveEnvVariable_Basic-8               267513              4233 ns/op            4256 B/op         53 allocs/op
+BenchmarkResolveEnvVariable_Complex-8             413080              2740 ns/op            3088 B/op         47 allocs/op
+```
+
 ## Used in
 
 - [zeabur/zbpack](https://github.com/zeabur/zbpack)
