@@ -11,6 +11,5 @@ require (
 )
 
 retract (
-	v2.0.0+incompatible
 	v1.0.0
 )
