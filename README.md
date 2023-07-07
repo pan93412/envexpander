@@ -164,6 +164,12 @@ BenchmarkResolveEnvVariable_Basic-8               267513              4233 ns/op
 BenchmarkResolveEnvVariable_Complex-8             413080              2740 ns/op            3088 B/op         47 allocs/op
 ```
 
+## Test Coverage
+
+```plain
+ok      github.com/pan93412/envexpander 0.119s  coverage: 100.0% of statements
+```
+
 ## Used in
 
 - [zeabur/zbpack](https://github.com/zeabur/zbpack)

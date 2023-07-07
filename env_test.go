@@ -37,6 +37,10 @@ func TestExtractAllVariables(t *testing.T) {
 		},
 		"A=1234": {},
 		"A=${B":  {},
+		"A=$B${C}": {
+			{4, 8},
+		},
+		"A=$B": {},
 	}
 
 	for k, v := range testmap {
@@ -308,6 +312,16 @@ func TestResolveEnvVariable(t *testing.T) {
 			},
 			Resolved: map[string]string{
 				"A": "${CCC}",
+			},
+		},
+		{
+			Raw: map[string]string{
+				"A": "${B}${B}${B}${B}${B}${B}",
+				"B": "114514",
+			},
+			Resolved: map[string]string{
+				"A": "114514114514114514114514114514114514",
+				"B": "114514",
 			},
 		},
 	}
