@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestExtractReferencedVariable(t *testing.T) {
+func TestFindVariableReferenceMap(t *testing.T) {
 	cvp := envexpander.NewCachedVariablePos()
 	testmap := map[string]map[string]struct{}{
 		"A=${B}":                 {"B": struct{}{}},
@@ -32,7 +32,7 @@ func TestExtractReferencedVariable(t *testing.T) {
 	}
 }
 
-func BenchmarkExtractReferencedVariable(b *testing.B) {
+func BenchmarkFindVariableReferenceMap(b *testing.B) {
 	cvp := envexpander.NewCachedVariablePos()
 	b.ResetTimer()
 

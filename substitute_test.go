@@ -77,3 +77,20 @@ func BenchmarkReplacerIntegrate(b *testing.B) {
 		r.Integrate()
 	}
 }
+
+func BenchmarkReplacerIntegrateWithCache(b *testing.B) {
+	cvp := envexpander.NewCachedVariablePos()
+	r := envexpander.Replacer{
+		Value: "A=${B}${C}${D}${D}",
+		Variables: map[string]string{
+			"B": "1234",
+			"C": "5678",
+			"D": "9012",
+		},
+	}
+
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		r.IntegrateWithCache(cvp)
+	}
+}
