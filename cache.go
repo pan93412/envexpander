@@ -33,13 +33,13 @@ func (c CachedVariablePos) write(value string, variables []VariablePos) {
 	c.cache[value] = variables
 }
 
-// ExtractAllVariables returns the cached variable positions.
-func (c CachedVariablePos) ExtractAllVariables(value string) []VariablePos {
+// MarkVariablePositions returns the cached variable positions.
+func (c CachedVariablePos) MarkVariablePositions(value string) []VariablePos {
 	if cached, ok := c.read(value); ok {
 		return cached
 	}
 
-	v := ExtractAllVariables(value)
+	v := MarkVariablePositions(value)
 	c.write(value, v)
 
 	return v
