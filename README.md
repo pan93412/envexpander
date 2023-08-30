@@ -158,10 +158,11 @@ A=${CCC}
 goos: darwin
 goarch: arm64
 pkg: github.com/pan93412/envexpander
-BenchmarkExtractReferencedVariable-8             9217406               109.7 ns/op           192 B/op          2 allocs/op
-BenchmarkResolverIntegrate-8                    10729408               110.4 ns/op            56 B/op          3 allocs/op
-BenchmarkResolveEnvVariable_Basic-8               267513              4233 ns/op            4256 B/op         53 allocs/op
-BenchmarkResolveEnvVariable_Complex-8             413080              2740 ns/op            3088 B/op         47 allocs/op
+BenchmarkFindVariableReferenceMap-8              9632380               111.0 ns/op           192 B/op           2 allocs/op
+BenchmarkResolveEnvVariable_Basic-8               261889              4229 ns/op            4298 B/op          46 allocs/op
+BenchmarkResolveEnvVariable_Complex-8             452300              2588 ns/op            3248 B/op          37 allocs/op
+BenchmarkReplacerIntegrate-8                     6312372               190.6 ns/op           168 B/op           6 allocs/op
+BenchmarkReplacerIntegrateWithCache-8           10643762               107.8 ns/op            56 B/op           3 allocs/op
 ```
 
 ## Test Coverage
