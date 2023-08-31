@@ -157,7 +157,7 @@ A=${CCC}
 ```plain
 goos: darwin
 goarch: arm64
-pkg: github.com/pan93412/envexpander
+pkg: github.com/pan93412/envexpander/v2
 BenchmarkFindVariableReferenceMap-8              9632380               111.0 ns/op           192 B/op           2 allocs/op
 BenchmarkResolveEnvVariable_Basic-8               261889              4229 ns/op            4298 B/op          46 allocs/op
 BenchmarkResolveEnvVariable_Complex-8             452300              2588 ns/op            3248 B/op          37 allocs/op
@@ -168,7 +168,7 @@ BenchmarkReplacerIntegrateWithCache-8           10643762               107.8 ns/
 ## Test Coverage
 
 ```plain
-ok      github.com/pan93412/envexpander 0.119s  coverage: 100.0% of statements
+ok      github.com/pan93412/envexpander/v2      0.587s  coverage: 100.0% of statements
 ```
 
 ## Used in
