@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/pan93412/envexpander"
+	"github.com/pan93412/envexpander/v2"
 )
 
 func main() {

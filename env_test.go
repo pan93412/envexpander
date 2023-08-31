@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/pan93412/envexpander"
+	"github.com/pan93412/envexpander/v2"
 	"github.com/stretchr/testify/assert"
 )
 
