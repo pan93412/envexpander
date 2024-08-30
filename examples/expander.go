@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/pan93412/envexpander/v2"
+	"github.com/pan93412/envexpander/v3"
 )
 
 func main() {
@@ -39,8 +39,7 @@ func main() {
 		env[k] = v
 	}
 
-	// resolve env variables
-	resolvedEnv := envexpander.ResolveEnvVariable(env)
+	resolvedEnv := envexpander.Expand(env)
 
 	// print
 	for k, v := range resolvedEnv {
